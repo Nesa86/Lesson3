@@ -8,13 +8,14 @@ import junit.framework.TestCase;
 public class CountQuarters extends TestCase {
 	
 	public void test() throws Exception {
-		assertEquals(2, countQuarters(64));
-		assertEquals(3, countQuarters(1278));
+		assertEquals(0, countQuarters(0.25));
+		assertEquals(0, countQuarters(1));
+		assertEquals(1, countQuarters(25.26));
+		assertEquals(3, countQuarters(12.78));
 	}
 
-	private Object countQuarters(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	private Object countQuarters(double money) {
+		return (int) (money * 100) % 25;
 	}
 
 }
